@@ -1,0 +1,35 @@
+/* ==========================================================================
+   App-Level Layout & Transition Styles
+   ========================================================================== */
+
+.nexus-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--bg-main);
+}
+
+main {
+  flex-grow: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* Smooth fade-in for view switching */
+main > section {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Subtle glow accents in background */
+.ambient-glow-top {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
